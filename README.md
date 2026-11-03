@@ -1,6 +1,19 @@
 # OPlus URCC AIDL HAL Service for Transsion Holdings Devices
 
+> [!IMPORTANT]
+> **Major Credits & Upstream Attribution**:
+> This project is a port and extension of the groundbreaking work by **[Rapli](https://github.com/RapliVx)** ([@RapliVx](https://github.com/RapliVx)).
+> Original upstream repository: **[RapliVx/Oplus-URCC-Bridge-Transsion](https://github.com/RapliVx/Oplus-URCC-Bridge-Transsion)**
+> Major credits to Rapli for creating the original URCC AIDL HAL service for Transsion devices, the zero-allocation GPU telemetry architecture, and the complete UAH opcode implementation.
+
 High-performance, zero-memory-leak Rust implementation of `vendor.oplus.hardware.urcc.IUrcc` (Unified Resource Control Center) engineered for ColorOS, OxygenOS, and RealmeUI (Android 14+) ROM ports across all **Transsion Holdings** smartphones (**Infinix**, **Tecno**, and **Itel**), spanning **MediaTek** (Helio & Dimensity), **UNISOC** (Spreadtrum), and **Qualcomm Snapdragon** SoCs.
+
+### Dimensity 7020 (MT6855) Port Additions (Infinix Note 40 Pro+ 5G / X6851B)
+This fork adds complete verified support for MediaTek Dimensity 7020 (`MT6855` / Mali-G57 MC2) on OxygenOS 15 / ColorOS 15:
+- **Mali-G57 MC2 GPU Telemetry Verification**: Verified and tuned zero-allocation kernel sampling across MTK GED (`/sys/module/ged/parameters/gpu_loading`) and Linux Devfreq governors.
+- **OxygenOS 15 HyperBoost / UAH Integration**: Satisfies UAH client handshakes (`liboplus-uah-client.so`) and prevents boot-phase freezes and error loops in `com.oplus.games` (Game Space).
+- **VINTF & ROM Integration**: Includes VINTF manifest (`manifest_oplus_urcc.xml`) and late_start init service definition for custom ROM trees.
+
 
 ---
 
